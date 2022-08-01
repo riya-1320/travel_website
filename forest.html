@@ -1,0 +1,431 @@
+
+
+<?php
+if(array_key_exists('addtocart', $_POST)) {
+    $link = mysqli_connect("localhost", "root", "", "users");
+
+    // Check connection
+    if($link === false){
+        die("ERROR: Could not connect. " . mysqli_connect_error());
+    }
+     
+    // Attempt insert query execution
+    $sql = "INSERT INTO user_cart (destination_name, destination_address, destination_desc,destination_cost) VALUES ('Peter', 'Parker', 'peterparker@mail.com',100)";
+    if(mysqli_query($link, $sql)){
+        echo "Records inserted successfully.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
+     
+    // Close connection
+    mysqli_close($link);
+}
+
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="bootstrap/css/font-awesome-5.8.1.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/mdb.css">
+    <link rel="stylesheet" href="bootstrap/css/style.css">
+    <title>Travel Yari</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    
+
+<!-- Slider Section -->
+<section>
+    <div class="images">   <img src="https://images.pexels.com/photos/1102908/pexels-photo-1102908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"alt="" class="img-fluid w-100" class="first image"/>  <div class="centeredd">Forests..India is one of the ten most forest-rich countries of the world.</div></div>
+
+    <img  src="C:\Users\Riya Gupta\Desktop\srs images\colll.png" class="second image1"/>
+    <div class="nav1">
+        <!-- Main Navbar -->
+        <nav class="navbar navbar-expand-sm navbar-dark bg-transparent">
+            <div class="container">
+
+
+                <div class="collapse navbar-collapse alignCenterNavBar" id="travel-navbar">
+                    <ul class="navbar-nav ">
+
+                        <li class="nav-item ">
+                            <h6><div class="font"><a href="#things" class="nav-link"><div class="dropdown"><span><i class="fas fa-map-marked-alt"></i>Things To Do</span><div class="dropdown-content">
+                                <div class="font">  <p><a href="northindia.html"id="coolor">Road trip</a></p></div>
+                                <p><a href="northindia.html"id="coolor">forests</a></p>
+                                <p><a href="westindia.html"id="coolor">beaches</a></p>
+                                <p><a href="southindia.html"id="coolor">devotion</a></p>
+                                <p><a href="centralindia.html"id="coolor">historical</a></p>
+                                <p><a href="northeast.html"id="coolor">water activities</a></p>
+                            </div> </div></a></div></h6>
+                        </li>
+
+                        <li class="nav-item ">
+                            <h6><div class="font">   <a href="#places" class="nav-link"><div class="dropdown"><span><i class="fa fa-brain"></i>get to know the country</span><div class="dropdown-content">
+                                <div class="card-title"><p><div class="aa"><a href="eastindia.html"id="coolor">East India</div></a></p></div>
+                                <p><a href="northindia.html" id="coolor">North India</a></p>
+                                <p><a href="westindia.html"id="coolor" >West India</a></p>
+                                <p><a href="southindia.html"id="coolor">south india</a></p>
+                                <p><a href="centralindia.html"id="coolor">central india</a></p>
+                                <p><a href="northeast.html"id="coolor">north east india</a></p>
+                </div></div></a></div></h6>
+    </li>
+    <li class="nav-item">
+        <h6>
+            <div class=""font"><a href="#search" class="nav-link"><div class="dropdown"><span><i class="fa fa-search"></i></span></a></div></div>
+        </h6>
+    </li>
+    <li class="nav-item ">
+        <h6><div class="font">   <a href="#" class="nav-link"><div class="dropdown"><span><i class="fa fa-suitcase-rolling"></i>suitcase</span><a href="#"id="coolor"></a></p></div>  </div></a></div></h6>
+    </li>
+
+    </ul>
+    </div>
+    </div>
+    </nav>
+    <button class="open-buttonn" onclick="openForm()">login</button>
+
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>Login</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="#" id="about">About</a>
+        <a href="#" id="login">search</a>
+        <a href="#gallery" id="galleryy">Gallery</a>
+        <a href="contact.html" id="contactt">Contact</a>
+    </div>
+    </div>
+
+
+</section><br>
+
+
+<!-- Search Section -->
+<section id="search" class="p-3 bg-white text-teal">
+    <div class="container">
+        <center>
+            <div class="row">
+                <div class="col">
+
+                    <img src="C:\Users\Riya Gupta\Desktop\img\download.png"><br><div class="text-block3">
+
+                    <h3> <div class="font"> <span class="text-teal">Search </span> Your Destination.</div></h3>
+                    <p >“Sometimes it takes a wrong turn to get you to the right place!!”</p>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form>
+                                <div class="form-group">
+                                    <div class="form"><input type="search" class="form-control" placeholder="Mumbai..."></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </center>
+</section><br><br><br>
+
+<!-- get to know the country -->
+<section id="#" class="p-3">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+
+                <br>
+                <div class="font"> come with us.</div>
+
+                <div class="font"> <h6> <br><p>Forestry in India is a significant rural industry and a major environmental resource. India is one of the ten most forest-rich countries of the world.</p></h6> </div>
+                <p>India is home to probably the best timberlands on the planet. From rich green pine and deodar trees to different untamed life going from tigers to elephants, India's woodlands are home to probably the most stunning living species. An excursion in the midst of one of these woodlands can end up being a restoring and enhancing experience. Not exclusively will it cause you to feel nearer to nature, however it will likewise give you a superior comprehension of your nation and the creatures that dwell in it.</p>
+
+
+
+            </div>
+        </div>
+
+
+</section>
+<!-- Popular Places -->
+
+<section id="places" class="p-3">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+
+                <div class="font"><i class="fa fa-book-reader"></i>popular forests in India.</div>
+
+                <p class="lead"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <a href="#"><img src="https://images.pexels.com/photos/4011446/pexels-photo-4011446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="East India"></a>
+                    <div class="card-body">
+                        <div class="font">  <h5 class="card-title">Sundarban,<br>West Bengal<button id="myBtn"><font>Read More..</font></button></div>
+
+                            <!-- The Modal -->
+                            <form  action="C:\xampp\htdocs\index" method="post">
+                            <div id="myModal" class="modal">
+                               
+                                    </style>
+                                <!-- Modal content -->
+                               
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <br><h3><strong> SUNDARBANS,WEST BENGAL</strong></h3><h4>South 24 Parganas and North 24 Parganas District,West bengal,India.1869 </h4><br><br><br><br>
+                                    <strong> The Sundarbans are known to be home to the white tiger (a variation of the Royal Bengal tiger). The huge Sundarbans National park is important for the Sundarbans delta which covers near 10,000 square kilometers and is the biggest deltas on the planet. The rich green mangrove woodland is a tiger save and a biosphere hold. Countless Sundari trees spread over the backwoods which likewise houses fishing felines, panther felines, macaques, wild pig, Indian dim mongoose, fox, wilderness feline, flying fox, pangolin, and chita.</strong>
+                             <br><br> 
+
+
+                                </div>
+
+                            </div></h5>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-3">
+                     <img src="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-fluid" alt="West India"></a>
+                    <div class="card-body">
+                        <div class="font"> <h5 class="card-title">Gir Forest,<br>Gujrat<button id="myBtn"><font>Read More..</font></button>
+
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <br><h3><strong> SUNDARBANS,WEST BENGAL</strong></h3><h4>South 24 Parganas and North 24 Parganas District,West bengal,India.1869 </h4>
+                                    The Sundarbans are known to be home to the white tiger (a variation of the Royal Bengal tiger). The huge Sundarbans National park is important for the Sundarbans delta which covers near 10,000 square kilometers and is the biggest deltas on the planet. The rich green mangrove woodland is a tiger save and a biosphere hold. Countless Sundari trees spread over the backwoods which likewise houses fishing felines, panther felines, macaques, wild pig, Indian dim mongoose, fox, wilderness feline, flying fox, pangolin, and chita.
+                                    <br><br>   <table>
+                                    <tr>
+                                        <td><img src="C:\Users\Riya Gupta\Desktop\img\wc.png"></td>
+                                        <td><img src="C:\Users\Riya Gupta\Desktop\img\thw.png"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Restroom Available.   </td>
+                                        <td> The daytime temperature reaches<br>
+                                            29 c and goes to dip to 17 c at night.  </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="C:\Users\Riya Gupta\Desktop\img\food.jpg"></td>
+                                        <td><img src="C:\Users\Riya Gupta\Desktop\img\time.png"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Food is available.</td>
+                                        <td> Appox. 8 hours to enjoy.  </td>
+                                    </tr>
+                                </table> </div>
+
+                            </div></h5></div>
+                        <p class="card-text"></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <a href="eastindia.html"> <img src="https://images.pexels.com/photos/572937/pexels-photo-572937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="North India"></a>
+                    <div class="card-body">
+                        <div class="font"> <h5 class="card-title">Sacred Grove,<br>Meghalaya<button id="myBtn"><font>Read More..</font></button></div>
+
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    Read more </div>
+
+                            </div></h5>
+                        <p class="card-text"></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <a href="eastindia.html">   <img src="https://images.pexels.com/photos/952895/pexels-photo-952895.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-fluid" alt="South India"></a>
+                    <div class="card-body">
+                        <div class="font">    <h5 class="card-title">Bandipur National park<button id="myBtn"><font>Read More..</font></button>
+
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    Read more </div>
+
+                            </div></h5></h5></div>
+                        <p class="card-text"></p>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+</section><br>
+
+
+<!-- Social Icons -->
+<section class="p-3 bg-teal text-white text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="font">Follow Travel Yari</div>
+                <p>Follow us on social media
+                    Connect, follow and have a conversation with us.
+
+                </p>
+                <a href="#" id="si">  <i class="fab fa-facebook-square fa-4x m-3"></i></a>
+                <a href="#" id="si">   <i class="fab fa-youtube fa-4x m-3"></i></a>
+                <a href="#" id="si"> <i class="fab fa-twitter fa-4x m-3"></i></a>
+                <a href="#" id="si"> <i class="fab fa-instagram fa-4x m-3"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Gallery Section -->
+<section id="gallery" class="p-3">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <h5 class="display-4">
+                    <div class="font"><span class="text-teal">Photo</span> Gallery</div>
+                </h5>
+                <p class="lead">l'll glimpse of Forests in India.</p>
+            </div>
+        </div>
+
+        <!-- Photo Grid -->
+        <div class="row overFlowScroll">
+            <div class="column">
+                <img src="https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/1671325/pexels-photo-1671325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/775199/pexels-photo-775199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100%">
+                <img src="https://images.pexels.com/photos/142497/pexels-photo-142497.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/1173777/pexels-photo-1173777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="https://images.pexels.com/photos/1459534/pexels-photo-1459534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/3801030/pexels-photo-3801030.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/1112186/pexels-photo-1112186.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/6992/forest-trees-northwestisbest-exploress.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="https://images.pexels.com/photos/1567058/pexels-photo-1567058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/1008739/pexels-photo-1008739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/131723/pexels-photo-131723.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/3304855/pexels-photo-3304855.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/1671324/pexels-photo-1671324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/775200/pexels-photo-775200.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+                <img src="https://images.pexels.com/photos/4320781/pexels-photo-4320781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="https://images.pexels.com/photos/1705086/pexels-photo-1705086.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100%">
+                <img src="https://images.pexels.com/photos/2744150/pexels-photo-2744150.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100%">
+                <img src="https://images.pexels.com/photos/5499899/pexels-photo-5499899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100%">
+                <img src="https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100%">
+                <img src="https://images.pexels.com/photos/3934783/pexels-photo-3934783.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100%">
+                <img src="https://images.pexels.com/photos/1853371/pexels-photo-1853371.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100%">
+            </div>
+        </div>
+
+        <!-- Main Footer -->
+        <footer class="p-3 mt-3 bg-teal text-white text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h3>Copyright &copy; 2020 , Travel Yari Pvt Ltd</h3>
+                        <h6>All Rights Reserved</h6>
+                        <h6>Developed & Maintained by srs tecnology.</h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap Js files -->
+        <script src="bootstrap/js/jquery.js"></script>
+        <script src="bootstrap/js/popper.min.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="bootstrap/js/mdb.js"></script>
+        <script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+            $('.carousel').carousel({
+                interval : 3000,
+                pause : 'hover'
+            });
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+</body>
+</html>
